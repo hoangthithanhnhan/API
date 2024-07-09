@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <style>
+        #trangthai,#trangthai-edit,#search{
+            width:100%;
+            display: block;
+            width: 100%;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+        }
+        #search{
+            width: 200px;
+            margin-left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex align-items-center">
+        <h1>CÁC KỲ FESTIVAL</h1>
+        <button style="height: 40px; margin-left: 25px;" class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModal">Thêm mới</button>
+        <input id="search" type="text" placeholder="Tìm kiếm...">
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 5%;">STT</th>
+                <th scope="col" style="width: 20%;">Tên kỳ</th>
+                <th scope="col" style="width: 25%;">Chủ đề</th>
+                <th scope="col" style="width: 20%;">Trạng thái</th>
+                <th class="text-center" scope="col" style="width: 20%;">Thứ tự</th>
+                <th scope="col" style="width: 10%; text-align: center;">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="list">
+        </tbody>
+    </table>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="thutu">Thứ tự</label>
+                            <input type="text" class="form-control" id="thutu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tenky">Tên kỳ</label>
+                            <input type="text" class="form-control" id="tenky" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="chude">Chủ đề</label>
+                            <input type="text" class="form-control" id="chude" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="trangthai">Trạng thái</label>
+                            <select id="trangthai" name="trangthai" class="form-control" required>
+                                <option>Chọn trạng thái</option>
+                                <option value="Sử dụng">1</option>
+                                <option value="Không sử dụng">0</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="cancel-create" type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <button id="save-create" type="button" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalupdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cập nhật</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" class="form-control" id="id-edit">
+                        <div class="form-group">
+                            <label for="thutu-edit">Thứ tự</label>
+                            <input type="text" class="form-control" id="thutu-edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tenky-edit">Tên kỳ</label>
+                            <input type="text" class="form-control" id="tenky-edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="chude-edit">Chủ đề</label>
+                            <input type="text" class="form-control" id="chude-edit" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="trangthai-edit">Trạng thái</label>
+                            <!-- <input type="text" class="form-control" id="trangthai-edit"> -->
+                            <select id="trangthai-edit" name="trangthai-edit" required>
+                                <option>Chọn trạng thái</option>
+                                <option value="Sử dụng">1</option>
+                                <option value="Không sử dụng">0</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="cancel-edit" type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <button id="save-edit" type="button" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modaldelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Chắc chắn xóa?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- <div class="modal-body">
+                
+                </div> -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary btn-delete">Xóa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        //api
+        renderData();
+        $('#save-create').on('click',function(){
+            let buildData={
+                'ThuTu':$('#thutu').val(),
+                'TenKy':$('#tenky').val(),
+                'ChuDe':$('#chude').val(),
+                'TrangThai':$('#trangthai').val()
+            };
+            $.ajax({
+                type:'POST',
+                contentType:'application/json',
+                url:'http://localhost:3000/KyFestival',
+                data:JSON.stringify(buildData),
+                success:function(data){
+                    $('#exampleModal').modal('hide');
+                    resetModal();
+                    renderData();
+                },
+                error:function(e){
+                }
+            })
+        })
+        $('#search').on('keyup',function(){
+            renderData();
+        })
+        $("#list").on('click', '.edit',function(){
+            let id = $(this).data("id");
+            $.ajax({
+                type:'GET',
+                url:`http://localhost:3000/KyFestival/${id}`,
+                success:function(data){
+                    if(data){
+                        $('#id-edit').val(data.id);
+                        $('#thutu-edit').val(data.ThuTu);
+                        $('#tenky-edit').val(data.TenKy);
+                        $('#chude-edit').val(data.ChuDe);
+                        $('#trangthai-edit').val(data.TrangThai);
+                        $('#modalupdate').modal('show');
+                    }
+                }
+            })
+        })
+        $('#save-edit').on('click',function(){
+            let buildData={
+                'ThuTu':$('#thutu-edit').val(),
+                'TenKy':$('#tenky-edit').val(),
+                'ChuDe':$('#chude-edit').val(),
+                'TrangThai':$('#trangthai-edit').val()
+            };
+            let idedit=$('#id-edit').val();
+            $.ajax({
+                type:'PUT',
+                contentType:'application/json',
+                url:`http://localhost:3000/KyFestival/${idedit}`,
+                data:JSON.stringify(buildData),
+                success:function(data){
+                    $('#modalupdate').modal('hide');
+                    renderData();
+                },
+                error:function(e){
+                }
+            })
+        })
+        $('#list').on('click','.delete',function(){
+            $('#modaldelete').modal('show');
+            let id = $(this).data("id");  
+            $('.btn-delete').on('click',function(){
+                $.ajax({
+                    type:'DELETE',
+                    url:`http://localhost:3000/KyFestival/${id}`,
+                    success:function(data){
+                        $('#modaldelete').modal('hide');
+                        renderData();
+                    }
+                })
+            })
+        })
+    })
+    function renderData(){
+        const search = $('#search').val().trim();
+        $.ajax({
+            type:'GET',
+            url:`http://localhost:3000/KyFestival?q=${search}&_sort=ThuTu&_order=asc`,
+            // url:`http://localhost:3000/KyFestival?_sort=ThuTu&_order=asc`,
+            dataType:'json',
+            success:function(data){
+                console.log(data)
+                if(data && data.length>0){
+                    let html=''
+                    $.each(data,function(index,value){
+                        html+=`
+                            <tr>
+                                <th scope="row" class='thu-tu'>${index+1}</th>
+                                <td class="ten-ky">${value.TenKy}</td>
+                                <td class="chu-de">${value.ChuDe}</td>
+                                <td class="trang-thai">${value.TrangThai}</td>
+                                <th scope="row" class='text-center'>${value.ThuTu}</th>
+                                <td style=" text-align: center;">
+                                    <i style='cursor:pointer' data-id="${value.id}" class="edit fa-solid fa-pen-to-square"></i>
+                                    <i style='cursor:pointer' data-id="${value.id}" class="delete fa-solid fa-trash"></i>
+                                </td>   
+                            </tr>
+                        `
+                    });
+                    $('#list').html(html);
+                };
+            },
+            error:function(e){
+            }
+        })
+    }
+    function resetModal(){
+        $('#exampleModal .form-control').val('');
+    }
+</script>
+</html>
