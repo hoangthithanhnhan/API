@@ -24,9 +24,21 @@
             border: 1px solid #ced4da;
             border-radius: .25rem;
         }
+        .search-block{
+            position: relative;
+        }
         #search{
-            width: 200px;
-            margin-left: 25px;
+            width: 400px;
+            margin-left: 25px;  
+        }
+        #btn-search{
+            position: absolute;
+            top:50%;
+            right: 0;
+            transform: translateY(-50%);
+            margin-right: 10px;
+            cursor: pointer;
+            color:#495057;
         }
     </style>
 </head>
@@ -34,7 +46,10 @@
     <div class="d-flex align-items-center">
         <h1>CÁC KỲ FESTIVAL</h1>
         <button style="height: 40px; margin-left: 25px;" class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModal">Thêm mới</button>
-        <input id="search" type="text" placeholder="Tìm kiếm...">
+        <div class="search-block">
+            <input id="search" type="text" placeholder="Tìm kiếm...">
+            <i id="btn-search" class="fa-solid fa-magnifying-glass"></i>
+        </div>
     </div>
     <table class="table table-striped">
         <thead>
@@ -62,10 +77,6 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="thutu">Thứ tự</label>
-                            <input type="text" class="form-control" id="thutu" required>
-                        </div>
-                        <div class="form-group">
                             <label for="tenky">Tên kỳ</label>
                             <input type="text" class="form-control" id="tenky" required>
                         </div>
@@ -77,9 +88,13 @@
                             <label for="trangthai">Trạng thái</label>
                             <select id="trangthai" name="trangthai" class="form-control" required>
                                 <option>Chọn trạng thái</option>
-                                <option value="Sử dụng">1</option>
-                                <option value="Không sử dụng">0</option>
+                                <option value="1">1</option>
+                                <option value="0">0</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="thutu">Thứ tự</label>
+                            <input type="text" class="form-control" id="thutu" required>
                         </div>
                     </form>
                 </div>
@@ -103,10 +118,6 @@
                     <form>
                         <input type="hidden" class="form-control" id="id-edit">
                         <div class="form-group">
-                            <label for="thutu-edit">Thứ tự</label>
-                            <input type="text" class="form-control" id="thutu-edit" required>
-                        </div>
-                        <div class="form-group">
                             <label for="tenky-edit">Tên kỳ</label>
                             <input type="text" class="form-control" id="tenky-edit" required>
                         </div>
@@ -119,9 +130,13 @@
                             <!-- <input type="text" class="form-control" id="trangthai-edit"> -->
                             <select id="trangthai-edit" name="trangthai-edit" required>
                                 <option>Chọn trạng thái</option>
-                                <option value="Sử dụng">1</option>
-                                <option value="Không sử dụng">0</option>
+                                <option value="1">1</option>
+                                <option value="0">0</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="thutu-edit">Thứ tự</label>
+                            <input type="text" class="form-control" id="thutu-edit" required>
                         </div>
                     </form>
                 </div>
@@ -141,9 +156,6 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <!-- <div class="modal-body">
-                
-                </div> -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
                     <button type="button" class="btn btn-primary btn-delete">Xóa</button>
@@ -157,12 +169,12 @@
         //api
         renderData();
         $('#save-create').on('click',function(){
-            let buildData={
-                'ThuTu':$('#thutu').val(),
+            let buildData={ 
+                'ThuTu':parseInt($('#thutu').val()),
                 'TenKy':$('#tenky').val(),
                 'ChuDe':$('#chude').val(),
                 'TrangThai':$('#trangthai').val()
-            };
+            };  
             $.ajax({
                 type:'POST',
                 contentType:'application/json',
@@ -176,9 +188,6 @@
                 error:function(e){
                 }
             })
-        })
-        $('#search').on('keyup',function(){
-            renderData();
         })
         $("#list").on('click', '.edit',function(){
             let id = $(this).data("id");
@@ -199,10 +208,10 @@
         })
         $('#save-edit').on('click',function(){
             let buildData={
-                'ThuTu':$('#thutu-edit').val(),
+                'ThuTu':parseInt($('#thutu-edit').val()),
                 'TenKy':$('#tenky-edit').val(),
                 'ChuDe':$('#chude-edit').val(),
-                'TrangThai':$('#trangthai-edit').val()
+                'TrangThai':$('#trangthai-edit').val()  
             };
             let idedit=$('#id-edit').val();
             $.ajax({
@@ -232,17 +241,24 @@
                 })
             })
         })
+        $('#btn-search').on('click',function(){
+            renderData();
+        })
+        $('#search').on('keyup',function(){
+            if (event.keyCode === 13) {
+                renderData();
+            }
+        })
     })
     function renderData(){
-        const search = $('#search').val().trim();
+        const search=$('#search').val().trim();
         $.ajax({
             type:'GET',
             url:`http://localhost:3000/KyFestival?q=${search}&_sort=ThuTu&_order=asc`,
-            // url:`http://localhost:3000/KyFestival?_sort=ThuTu&_order=asc`,
             dataType:'json',
             success:function(data){
-                console.log(data)
                 if(data && data.length>0){
+                    console.log(data);
                     let html=''
                     $.each(data,function(index,value){
                         html+=`
