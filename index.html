@@ -40,128 +40,158 @@
             cursor: pointer;
             color:#495057;
         }
+        .page-link {
+            color: #fff;
+            background-color: #28a745;
+        }
+        .pagination{
+            justify-content: flex-end;
+            margin-right: 50px;
+        }
     </style>
 </head>
 <body>
-    <div class="d-flex align-items-center">
-        <h1>CÁC KỲ FESTIVAL</h1>
-        <button style="height: 40px; margin-left: 25px;" class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModal">Thêm mới</button>
-        <div class="search-block">
-            <input id="search" type="text" placeholder="Tìm kiếm...">
-            <i id="btn-search" class="fa-solid fa-magnifying-glass"></i>
+    <div class="container">
+        <div class="d-flex align-items-center">
+            <h1>CÁC KỲ FESTIVAL</h1>
+            <button style="height: 40px; margin-left: 25px;" class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModal">Thêm mới</button>
+            <div class="search-block">
+                <input id="search" type="text" placeholder="Tìm kiếm...">
+                <i id="btn-search" class="fa-solid fa-magnifying-glass"></i>
+            </div>
         </div>
-    </div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col" style="width: 5%;">STT</th>
-                <th scope="col" style="width: 20%;">Tên kỳ</th>
-                <th scope="col" style="width: 25%;">Chủ đề</th>
-                <th scope="col" style="width: 20%;">Trạng thái</th>
-                <th class="text-center" scope="col" style="width: 20%;">Thứ tự</th>
-                <th scope="col" style="width: 10%; text-align: center;">Thao tác</th>
-            </tr>
-        </thead>
-        <tbody id="list">
-        </tbody>
-    </table>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="tenky">Tên kỳ</label>
-                            <input type="text" class="form-control" id="tenky" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="chude">Chủ đề</label>
-                            <input type="text" class="form-control" id="chude" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="trangthai">Trạng thái</label>
-                            <select id="trangthai" name="trangthai" class="form-control" required>
-                                <option>Chọn trạng thái</option>
-                                <option value="1">1</option>
-                                <option value="0">0</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="thutu">Thứ tự</label>
-                            <input type="text" class="form-control" id="thutu" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button id="cancel-create" type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button id="save-create" type="button" class="btn btn-primary">Lưu</button>
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 5%;">STT</th>
+                    <th scope="col" style="width: 20%;">Tên kỳ</th>
+                    <th scope="col" style="width: 25%;">Chủ đề</th>
+                    <th scope="col" style="width: 20%;">Trạng thái</th>
+                    <th class="text-center" scope="col" style="width: 20%;">Thứ tự</th>
+                    <th scope="col" style="width: 10%; text-align: center;">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+            </tbody>
+        </table>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="tenky">Tên kỳ</label>
+                                <input type="text" class="form-control" id="tenky" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="chude">Chủ đề</label>
+                                <input type="text" class="form-control" id="chude" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="trangthai">Trạng thái</label>
+                                <select id="trangthai" name="trangthai" class="form-control" required>
+                                    <option>Chọn trạng thái</option>
+                                    <option value="1">Sử dụng</option>
+                                    <option value="0">Không sử dụng</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="thutu">Thứ tự</label>
+                                <input type="text" class="form-control" id="thutu" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="cancel-create" type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                        <button id="save-create" type="button" class="btn btn-primary">Lưu</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="modalupdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cập nhật</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <input type="hidden" class="form-control" id="id-edit">
-                        <div class="form-group">
-                            <label for="tenky-edit">Tên kỳ</label>
-                            <input type="text" class="form-control" id="tenky-edit" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="chude-edit">Chủ đề</label>
-                            <input type="text" class="form-control" id="chude-edit" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="trangthai-edit">Trạng thái</label>
-                            <!-- <input type="text" class="form-control" id="trangthai-edit"> -->
-                            <select id="trangthai-edit" name="trangthai-edit" required>
-                                <option>Chọn trạng thái</option>
-                                <option value="1">1</option>
-                                <option value="0">0</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="thutu-edit">Thứ tự</label>
-                            <input type="text" class="form-control" id="thutu-edit" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button id="cancel-edit" type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button id="save-edit" type="button" class="btn btn-primary">Lưu</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="modaldelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Chắc chắn xóa?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary btn-delete">Xóa</button>
+        <div class="modal fade" id="modalupdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cập nhật</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <input type="hidden" class="form-control" id="id-edit">
+                            <div class="form-group">
+                                <label for="tenky-edit">Tên kỳ</label>
+                                <input type="text" class="form-control" id="tenky-edit" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="chude-edit">Chủ đề</label>
+                                <input type="text" class="form-control" id="chude-edit" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="trangthai-edit">Trạng thái</label>
+                                <!-- <input type="text" class="form-control" id="trangthai-edit"> -->
+                                <select id="trangthai-edit" name="trangthai-edit" required>
+                                    <option>Chọn trạng thái</option>
+                                    <option value="1">Sử dụng</option>
+                                    <option value="0">Không sử dụng</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="thutu-edit">Thứ tự</label>
+                                <input type="text" class="form-control" id="thutu-edit" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="cancel-edit" type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                        <button id="save-edit" type="button" class="btn btn-primary">Lưu</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="modaldelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Chắc chắn xóa?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" class="form-control" id="id-delete">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-primary btn-delete">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </body>
 <script>
@@ -227,18 +257,50 @@
                 }
             })
         })
-        $('#list').on('click','.delete',function(){
-            $('#modaldelete').modal('show');
-            let id = $(this).data("id");  
-            $('.btn-delete').on('click',function(){
-                $.ajax({
-                    type:'DELETE',
-                    url:`http://localhost:3000/KyFestival/${id}`,
-                    success:function(data){
-                        $('#modaldelete').modal('hide');
-                        renderData();
+        // $('#list').on('click','.delete',function(){
+        //     $('#modaldelete').modal('show');
+        //     let id = $(this).data("id");  
+        //     $('.btn-delete').on('click',function(){
+        //         $.ajax({
+        //             type:'DELETE',
+        //             url:`http://localhost:3000/KyFestival/${id}`,
+        //             success:function(data){
+        //                 $('#modaldelete').modal('hide');
+        //                 renderData();
+        //             }
+        //         })
+        //     })
+        // })
+
+        $('#list').on('click', '.delete',function(){
+            let id = $(this).data("id");
+            console.log(id)
+            $.ajax({
+                type:'GET',
+                url:`http://localhost:3000/KyFestival/${id}`,
+                success:function(data){
+                    if(data){
+                        $('#id-delete').val(data.id);
+                        $('#modaldelete').modal('show'); 
                     }
-                })
+                }
+            })
+        })
+        $('.btn-delete').on('click',function(){
+            let buildData={
+                'id':$('#id-delete').val()
+            }
+            let id_delete = $('#id-delete').val(); 
+            console.log(id_delete)
+            $.ajax({
+                type:'DELETE',
+                url:`http://localhost:3000/KyFestival/${id_delete}`,
+                data:JSON.stringify(buildData),
+                success:function(data){
+                    $('#modaldelete').modal('hide');
+                    renderData();
+                },
+                error:function(e){}
             })
         })
         $('#btn-search').on('click',function(){
@@ -257,8 +319,7 @@
             url:`http://localhost:3000/KyFestival?q=${search}&_sort=ThuTu&_order=asc`,
             dataType:'json',
             success:function(data){
-                if(data && data.length>0){
-                    console.log(data);
+                if(data && data.length>0){  
                     let html=''
                     $.each(data,function(index,value){
                         html+=`
@@ -266,7 +327,7 @@
                                 <th scope="row" class='thu-tu'>${index+1}</th>
                                 <td class="ten-ky">${value.TenKy}</td>
                                 <td class="chu-de">${value.ChuDe}</td>
-                                <td class="trang-thai">${value.TrangThai}</td>
+                                <td class="trang-thai">${value.TrangThai=='1'?'Sử dụng':'Không sử dụng'}</td>
                                 <th scope="row" class='text-center'>${value.ThuTu}</th>
                                 <td style=" text-align: center;">
                                     <i style='cursor:pointer' data-id="${value.id}" class="edit fa-solid fa-pen-to-square"></i>
@@ -284,6 +345,13 @@
     }
     function resetModal(){
         $('#exampleModal .form-control').val('');
+    }
+    function outputID(){
+        $('#list').on('click','.delete',function(){
+            $('#modaldelete').modal('show');
+            let id = $(this).data("id");
+            console.log(id)
+        })
     }
 </script>
 </html>
