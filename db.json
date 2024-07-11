@@ -1,151 +1,22 @@
 {
   "KyFestival": [
     {
-      "ThuTu": 8,
-      "TenKy": "Festival 2023",
-      "ChuDe": "Làng nghề truyền thống",
-      "TrangThai": "0",
-      "id": "7b85"
+      "TenKy": "",
+      "Nam": "2020",
+      "ChuDe": "",
+      "GioiThieu": "",
+      "ThuTu": null,
+      "NgonNgu": "Tiếng Việt",
+      "id": 1
     },
     {
-      "ThuTu": 6,
-      "TenKy": "Festival 2020",
-      "ChuDe": "Lễ hội Ánh Sáng",
-      "TrangThai": "1",
-      "id": "8496"
-    },
-    {
-      "ThuTu": 3,
-      "TenKy": "Festival 2024",
-      "ChuDe": "Kinh khí cầu",
-      "TrangThai": "1",
-      "id": "c252"
-    },
-    {
-      "ThuTu": 12,
-      "TenKy": "Festival 2024",
-      "ChuDe": "Mùa hạ",
-      "TrangThai": "1",
-      "id": "741d"
-    },
-    {
-      "ThuTu": 10,
-      "TenKy": "Festival 2000",
-      "ChuDe": "Làng nghề",
-      "TrangThai": "0",
-      "id": "vA3iaA_"
-    },
-    {
-      "ThuTu": 19,
-      "TenKy": "Festival 2012",
-      "ChuDe": "Mùa Xuân",
-      "TrangThai": "0",
-      "id": "4OmjDAw"
-    },
-    {
-      "ThuTu": 7,
-      "TenKy": "Festival 2024",
-      "ChuDe": "Làng nghề truyền thống\t",
-      "TrangThai": "1",
-      "id": "1_mxI15"
-    },
-    {
-      "ThuTu": 11,
-      "TenKy": "Festival 2000",
-      "ChuDe": "Làng nghề truyền thống",
-      "TrangThai": "1",
-      "id": "h3HUBAU"
-    },
-    {
-      "ThuTu": 18,
-      "TenKy": "Festival 2022",
-      "ChuDe": "Hội chợ festival",
-      "TrangThai": "0",
-      "id": "jbv3QWl"
-    },
-    {
-      "ThuTu": 17,
-      "TenKy": "Festival 2022",
-      "ChuDe": "Lễ hội đấu vật",
-      "TrangThai": "1",
-      "id": "z92woHR"
-    },
-    {
-      "ThuTu": 14,
-      "TenKy": "Festival 2006",
-      "ChuDe": "Lễ hội ánh sáng",
-      "TrangThai": "0",
-      "id": "hpaPM6U"
-    },
-    {
-      "ThuTu": 20,
-      "TenKy": "Festival 2000",
-      "ChuDe": "Lễ tế đàn Nam Giao",
-      "TrangThai": "0",
-      "id": "tlmTSbZ"
-    },
-    {
-      "ThuTu": 21,
-      "TenKy": "Festival 2015",
-      "ChuDe": "Hội chợ truyền thống",
-      "TrangThai": "1",
-      "id": "HtYCgQv"
-    },
-    {
-      "ThuTu": 4,
-      "TenKy": "Festival 2020",
-      "ChuDe": "Kinh khí cầu",
-      "TrangThai": "1",
-      "id": "Zhug69Q"
-    },
-    {
-      "ThuTu": 15,
-      "TenKy": "Festival 2001",
-      "ChuDe": "Làng nghề truyền thống",
-      "TrangThai": "0",
-      "id": "NJF8QYC"
-    },
-    {
-      "ThuTu": 16,
-      "TenKy": "Festival 2009",
-      "ChuDe": "Mùa Hè",
-      "TrangThai": "0",
-      "id": "2eUcvJM"
-    },
-    {
-      "ThuTu": 9,
-      "TenKy": "Festival 2021",
-      "ChuDe": "Làng nghề truyền thống",
-      "TrangThai": "0",
-      "id": "HTMbfpV"
-    },
-    {
-      "ThuTu": 5,
-      "TenKy": "Festival 2000",
-      "ChuDe": "Lễ hội Ánh Sáng",
-      "TrangThai": "1",
-      "id": "ruRvNb6"
-    },
-    {
-      "ThuTu": 13,
-      "TenKy": "Festival 2024",
-      "ChuDe": "Lễ tế đàn Nam Giao",
-      "TrangThai": "0",
-      "id": "v9EU8vD"
-    },
-    {
-      "ThuTu": 1,
-      "TenKy": "Festival 2000",
-      "ChuDe": "Làng nghề truyền thống",
-      "TrangThai": "1",
-      "id": "TsGxYs7"
-    },
-    {
-      "ThuTu": 2,
-      "TenKy": "Festival 2001",
-      "ChuDe": "Làng nghề truyền thống",
-      "TrangThai": "1",
-      "id": "oJZiAoG"
+      "TenKy": "",
+      "Nam": "2020",
+      "ChuDe": "",
+      "GioiThieu": "",
+      "ThuTu": null,
+      "NgonNgu": "Tiếng Việt",
+      "id": 2
     }
   ]
 }
