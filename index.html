@@ -117,17 +117,17 @@
                             <div class="form-group">
                                 <label for="ngonngu">Ngôn ngữ</label>
                                 <select id="ngonngu" name="ngonngu" class="form-control">
-                                    <option value="Tiếng Việt">Tiếng Việt</option>
-                                    <option value="Tiếng Anh">Tiếng Anh</option>
-                                    <option value="Tiếng Pháp">Tiếng Pháp</option>
+                                    <option value="1">Tiếng Việt</option>
+                                    <option value="2">Tiếng Anh</option>
+                                    <option value="3">Tiếng Pháp</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <form id="trangthai">
-                                    <label for="trangthai">Trạng thái</label>
-                                    <input type="radio" value="1" name="trangthai">Sử dụng
-                                    <input type="radio" value="0" name="trangthai"> Không sử dụng  
-                                </form>
+                                <p>Trạng thái</p>
+                                <input type="radio" id="su-dung" name="trangthai" value="1">
+                                <label for="su-dung">Sử dụng</label>
+                                <input type="radio" id="khong-su-dung" name="trangthai" value="0">
+                                <label for="khong-su-dung">Không sử dụng</label>
                             </div>
                         </form>
                     </div>
@@ -149,6 +149,7 @@
                     </div>
                     <div class="modal-body">
                         <form>
+                            <input type="hidden" class="form-control" id="id-edit">
                             <div class="form-group">
                                 <label for="tenky-edit">Tên kỳ</label>
                                 <input type="text" class="form-control" id="tenky-edit" required>
@@ -179,16 +180,16 @@
                                 <label for="ngonngu-edit">Ngôn ngữ</label>
                                 <select id="ngonngu-edit" name="ngonngu-edit" class="form-control" required>
                                     <option value="1">Tiếng Việt</option>
-                                    <option value="1">Tiếng Anh</option>
-                                    <option value="1">Tiếng Pháp</option>
+                                    <option value="2">Tiếng Anh</option>
+                                    <option value="3">Tiếng Pháp</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <form id="trangthai-edit">
-                                    <label for="trangthai-edit">Trạng thái</label>
-                                    <input type="radio" value="1" name="trangthai-edit"> Sử dụng
-                                    <input type="radio" value="0" name="trangthai-edit"> Không sử dụng  
-                                </form>
+                                <p>Trạng thái</p>
+                                <input type="radio" id="su-dung" name="trangthai-edit" value="1">
+                                <label for="su-dung">Sử dụng</label>
+                                <input type="radio" id="khong-su-dung" name="trangthai-edit" value="0">
+                                <label for="khong-su-dung">Không sử dụng</label>
                             </div>
                         </form>
                     </div>
@@ -231,9 +232,9 @@
                 'ChuDe':$('#chude').val(),
                 'GioiThieu':$('#gioithieu').val(),
                 'ThuTu':parseInt($('#thutu').val()),
-                'NgonNgu':$('#ngonngu').val(),
-                'TrangThai':$('.trangthai').val(),
-            };  console.log('#trangthai')
+                'NgonNgu':parseInt($('#ngonngu').val()),
+                'TrangThai':$('input[name="trangthai"]:checked').val(),
+            };
             $.ajax({
                 type:'POST',
                 contentType:'application/json',
@@ -244,12 +245,12 @@
                     resetModal();
                     renderData();
                 },
-                error:function(e){
-                }
+                error:function(e){}
             })
         })
         $("#list").on('click', '.edit',function(){
             let id = $(this).data("id");
+            console.log(id)
             $.ajax({
                 type:'GET',
                 url:`http://localhost:3000/KyFestival/${id}`,
@@ -261,8 +262,8 @@
                         $('#chude-edit').val(data.ChuDe);
                         $('#gioithieu-edit').val(data.GioiThieu);
                         $('#thutu-edit').val(data.ThuTu);
-                        $('#ngongnu-edit').val(data.NgonNgu);
-                        $('#trangthai-edit').val(data.TrangThai);
+                        $('#ngonngu-edit').val(data.NgonNgu);
+                        $('input[name="trangthai-edit"]:checked').val(data.TrangThai);
                         $('#modalUpdate').modal('show');
                     }
                 }
@@ -275,10 +276,11 @@
                 'ChuDe':$('#chude-edit').val(),
                 'GioiThieu':$('#gioithieu-edit').val(),
                 'ThuTu':parseInt($('#thutu-edit').val()),
-                'NgonNgu':$('#ngongnu-edit').val(),
-                'TrangThai':$('#trangthai-edit').val()  
+                'NgonNgu':parseInt($('#ngonngu-edit').val()),
+                'TrangThai':$('input[name="trangthai-edit"]:checked').val()
             };
             let idedit=$('#id-edit').val();
+            console.log(idedit)
             $.ajax({
                 type:'PUT',
                 contentType:'application/json',
@@ -335,7 +337,7 @@
                                 <th scope="row" class='thu-tu'>${index+1}</th>
                                 <td class="ten-ky">${value.TenKy}</td>
                                 <td class="chu-de">${value.ChuDe}</td>
-                                <td class="chu-de">${value.NgonNgu}</td>
+                                <td class="chu-de">${value.NgonNgu=='1'?'Tiếng Việt':value.NgonNgu=='2'?'Tiếng Anh':'Tiếng Pháp'}</td>
                                 <td class="chu-de">${value.Nam}</td>
                                 <td class="trang-thai">${value.TrangThai=='1'?'Sử dụng':'Không sử dụng'}</td>
                                 <th scope="row" class='text-center'>${value.ThuTu}</th>

@@ -1,22 +1,246 @@
 {
   "KyFestival": [
     {
-      "TenKy": "",
-      "Nam": "2020",
-      "ChuDe": "",
-      "GioiThieu": "",
-      "ThuTu": null,
-      "NgonNgu": "Tiếng Việt",
+      "TenKy": "Festival Huế 2022",
+      "Nam": "2022",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 1,
+      "NgonNgu": 1,
+      "TrangThai": "1",
       "id": 1
     },
     {
-      "TenKy": "",
+      "TenKy": "Festival Huế 2020 ",
       "Nam": "2020",
-      "ChuDe": "",
-      "GioiThieu": "",
-      "ThuTu": null,
-      "NgonNgu": "Tiếng Việt",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển - Huế luôn luôn mới",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển - Huế luôn luôn mới",
+      "ThuTu": 2,
+      "NgonNgu": 1,
+      "TrangThai": "1",
       "id": 2
+    },
+    {
+      "TenKy": "Festival Huế 2018",
+      "Nam": "2018",
+      "ChuDe": "Huế - tỏa sáng miền di sản",
+      "GioiThieu": "Huế - tỏa sáng miền di sản",
+      "ThuTu": 3,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 3
+    },
+    {
+      "TenKy": "Festival Huế 2016",
+      "Nam": "2016",
+      "ChuDe": "Huế mãi trọn tình",
+      "GioiThieu": "Huế mãi trọn tình",
+      "ThuTu": 4,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 4
+    },
+    {
+      "TenKy": "Festival Huế 2014",
+      "Nam": "2014",
+      "ChuDe": "Di sản văn hóa với hội nhập",
+      "GioiThieu": "Di sản văn hóa với hội nhập",
+      "ThuTu": 5,
+      "NgonNgu": 3,
+      "TrangThai": "1",
+      "id": 5
+    },
+    {
+      "TenKy": "Festival Huế 2012",
+      "Nam": "2012",
+      "ChuDe": "Du lịch di sản",
+      "GioiThieu": "Du lịch di sản",
+      "ThuTu": 6,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 6
+    },
+    {
+      "TenKy": "Festival Huế 2010",
+      "Nam": "2010",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 7,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 7
+    },
+    {
+      "TenKy": "Festival Huế 2008",
+      "Nam": "2008",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 8,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 8
+    },
+    {
+      "TenKy": "Festival Huế 2006",
+      "Nam": "2006",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 9,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 9
+    },
+    {
+      "TenKy": "Festival Huế 2004",
+      "Nam": "2004",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 10,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 10
+    },
+    {
+      "TenKy": "Festival Huế 2002",
+      "Nam": "2002",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 11,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 11
+    },
+    {
+      "TenKy": "Festival Huế 2000",
+      "Nam": "2000",
+      "ChuDe": "Huế - Thành phố của nghệ thuật sống",
+      "GioiThieu": "Huế - Thành phố của nghệ thuật sống",
+      "ThuTu": 12,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 12
+    },
+    {
+      "TenKy": "Festival Huế 2016",
+      "Nam": "2016",
+      "ChuDe": "Huế mãi trọn tình",
+      "GioiThieu": "Huế mãi trọn tình",
+      "ThuTu": 4,
+      "NgonNgu": 1,
+      "TrangThai": "0",
+      "id": 4
+    },
+    {
+      "TenKy": "Festival Huế 2014",
+      "Nam": "2014",
+      "ChuDe": "Di sản văn hóa với hội nhập",
+      "GioiThieu": "Di sản văn hóa với hội nhập",
+      "ThuTu": 5,
+      "NgonNgu": 3,
+      "TrangThai": "1",
+      "id": 5
+    },
+    {
+      "TenKy": "Festival Huế 2012",
+      "Nam": "2012",
+      "ChuDe": "Du lịch di sản",
+      "GioiThieu": "Du lịch di sản",
+      "ThuTu": 6,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 6
+    },
+    {
+      "TenKy": "Festival Huế 2010",
+      "Nam": "2010",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 7,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 7
+    },
+    {
+      "TenKy": "Festival Huế 2008",
+      "Nam": "2008",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 8,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 8
+    },
+    {
+      "TenKy": "Festival Huế 2006",
+      "Nam": "2006",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 9,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 9
+    },
+    {
+      "TenKy": "Festival Huế 2004",
+      "Nam": "2004",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 10,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 10
+    },
+    {
+      "TenKy": "Festival Huế 2002",
+      "Nam": "2002",
+      "ChuDe": "Di sản văn hóa với hội nhập và phát triển",
+      "GioiThieu": "Di sản văn hóa với hội nhập và phát triển",
+      "ThuTu": 11,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 11
+    },
+    {
+      "TenKy": "Festival Huế 2000",
+      "Nam": "2000",
+      "ChuDe": "Huế - Thành phố của nghệ thuật sống",
+      "GioiThieu": "Huế - Thành phố của nghệ thuật sống",
+      "ThuTu": 12,
+      "NgonNgu": 1,
+      "TrangThai": "1",
+      "id": 12
+    }
+  ],
+  "TinTucNoiBat": [
+    {
+      "Image": "",
+      "Thumbnail":"",
+      "Title": "Chiêm ngưỡng tác phẩm của họa sĩ trẻ Cố đô",
+      "Date": "2024-04-02T00:00:00"
+    },
+    {
+      "Image": "../assets/images/ve-festival/img1.png",
+      "Thumbnail":"../assets/images/ve-festival/img11.png",
+      "Title": "Lễ hội Điện Huệ Nam 2024 tái hiện carnival dân gian với lễ rước Thánh đường bộ kéo dài 3km",
+      "Date": "2024-04-02T00:00:00"
+    },
+    {
+      "Image": "../assets/images/ve-festival/img2.png",
+      "Thumbnail":"../assets/images/ve-festival/img22.png",
+      "Title": "Đẩy mạnh hợp tác giữa Festival Huế và các đối tác Bỉ tham dự Festival Huế 2024",
+      "Date": "2024-04-02T00:00:00"
+    },
+    {
+      "Image": "../assets/images/ve-festival/img3.png",
+      "Thumbnail":"../assets/images/ve-festival/img33.png",
+      "Title": "30.000 lượt người thưởng thức Ngọ Môn lung linh trong đêm Huế by Light – The live Show",
+      "Date": "2024-04-02T00:00:00"
+    },
+    {
+      "Image": "../assets/images/ve-festival/img4.png",
+      "Thumbnail":"../assets/images/ve-festival/img44.png",
+      "Title": "Bảo tồn và phát huy giá trị di sản văn hóa thời Nguyễn",
+      "Date": "2024-04-02T00:00:00"
     }
   ]
 }
